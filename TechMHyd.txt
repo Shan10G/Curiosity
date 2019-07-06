@@ -1,0 +1,685 @@
+- Features of Notebook
+	- Formatted Text ---> markdown
+	- Codes  ---> code
+	- Notepad ---> Raw NBConvert
+- Syntax rules of Python
+1. Python is case sensitive
+2. # is used for comments
+	- single line comments
+	- for multi line we need to put # infornt of every line
+	- '''
+		comments
+          '''
+3. Naming rules
+	- names can be alphanumeric
+	- no symbols except _
+	- always begin with alphabet or _
+
+4. Operators
+	- Assignment
+		=
+	- Arithematic
+		/ * + - 
+		% 	--> remiander
+		**	--> power 5 ** 2
+		//	--> floor division
+	- Assignment and Artihmatic
+		+=
+		-=
+		/=
+		*=
+		%=
+		//=
+	- Relational Operators
+		>
+		<
+		>=
+		<=
+		==
+		!=
+	- Logical Operators
+				Python			Pandas/Numpy
+		AND		and			&
+		OR		or			|
+		NOT		not			~ or -
+	- Other 
+		is
+		in
+		not in
+		.		
+5. Datatypes
+	- Python is dynamically typed
+	- No need for variable declarations
+	s = "My First Class"
+		objects ---> characterstics  +  behaviour
+				code and data are together\						attributes and functions
+
+	print(s)  <----- proc language C,C++
+	s.lower() <----- object oriented lang style
+------------------------------------------------------------------- 
+	Numbers					Py 3.xx	     Pandas
+		smaller nos w/o decimal		int	     int32
+		larger nos w/o decimal		int	     int64
+		number with decimal		float	     float64
+	Text					str	     object
+	Boolean					bool	     bool
+-------------------------------------------------------------------
+	Date/Time(derived DT)			
+
+type()
+
+		str()
+		float()
+		int()
+		bool()
+
+		- we can convert from bottom to top
+		- while converting top-down
+			- data loss
+			- error
+			- possible with conditions
+		- all conversions must be reassigned
+6. Data Structures
+	In an object, we store data
+		- what kind of data is present (datatypes)
+		- how the information is stored (data structures)	
+	tuple, list, set and dict
+	    They're 1 dimentional heterogenous array
+
+		- how to create
+		- how to access elements
+			- [] to extract by index
+			- indexing  ---> 0 to n-1
+		- how to apply conditions
+		- attrubutes and functions
+7. Conditionals
+x
+if(x > 0){				if x > 0:
+    printf("pos");			    print("pos")
+}					else:
+else{					    print("neg")
+    printf("neg");			print("We are done!")
+}
+printf("we are done!");
+
+for(i = 0; i <= 10; i+=1){
+
+
+}
+
+for i in <tuple,list,set,dict>:
+    ... 
+    ...
+    ...
+}
+
+
+
+a = 20
+b = a
+a = a * 20
+
+
+a = 400
+b = 20
+
+
+	
+		https://zoom.us/j/854228986
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8. Loops
+9. User defined functions
+
+	- reusability
+	- arguments
+	- perform a task and then either print or return values
+		- there can be any number of print
+		- there should be only one return statement
+		- that return statement can have only one object
+		- we can use any 1D/2D object to return 
+			multiple values
+	
+	def FunctionName(arg1,arg2...):
+            pass
+10. Modules and packages
+	- module is a .py file
+	- can be reused
+	- user created module needs to be copied in Lib folder
+
+	How to import it in a Python code??
+
+		import <module/package name>
+
+		import <module/package name> as <alias>
+	
+	How to use the functions and variables from a module?
+		module.function()
+		module.value
+			- if we use a function call for values,
+				E.g. module.pi()	
+
+				'float' object is not callable	
+
+	- Packages : 
+		- is a folder which has a collection of modules
+		- for a folder to be identified as a package,
+			it must have __init__.py
+			- contains any initialization code
+			- or it can be blank
+		- site-packages inside Lib
+		
+		- getting pacakges
+			pip install <pacakge> in your shell
+				- if any version of that package and 					it's dependency packages is installed 						or not
+				- if no, then download 
+		- updating pacakges
+			pip install --upgrade <pacakge name>
+				- if latest version of that package 				  and it's dependency packages is 				   installed or not
+-------------------------------------------------------------------
+- numerical python - NUMPY
+	- Contains mathematical, stat, sci functions
+		- all basic arithmatic
+		- matrix operations and theorms
+		- advanced maths
+		- statistical arithmatic (mean, median, std,var etc)
+	- data structures of numpy
+		- array
+			- 1D homogenous data structure
+			- type() is a numpy.ndarray
+			- every array has a .dtype 
+			- arrays are vectorized
+		- creation, extactions
+		- filtering
+			- boolean indexing
+		- broadcasting
+		- matrix and linear equyations XXXXXXXX
+		
+-------------------------------------------------------------------
+pandas
+	- panel data analysis
+		- the main reason why tables exist in Python
+	- What does pandas provide us?
+		- two data structures
+			- 1D homogenous DS		pd.Series
+			- 2D heterogenous, named DS     pd.DataFrame
+	- Series
+		- creation
+		- indexing
+		- applying conditions
+		- functions
+	- DataFrames
+		- importing 
+		- basic analysis of the data imported
+
+- Series
+	- 1D homogenous
+	- loc vs iloc
+
+- DataFrames
+	- A DataFrame is a collection of Series
+		- 2D heterogenous DS
+		- has names for both columns and rows(0 to n-1)
+		- similar to regular tables
+	- How to get data frames
+		- concat multiple equal length Series
+		- import from external source
+			- text delimited/csv file
+			- Excel
+			- connect to a database
+			https://zoom.us/j/752305367
+--> Importing of data
+
+	-> CSV file - textfile with a , as delimiter
+		pd.read_csv("../.../.../file.csv", sep = ",")
+	-> text files - 
+		pd.read_csv("/../..", sep = "")
+	-> Excel
+		pd.read_excel()
+			sheet_name = index(0,1,2..) or names
+--> Basic Explorations for df
+	- df.shape  -
+		(r,c)
+		r = df.shape[0]
+		c = df.shape[1]
+	- df.head() and df.tail() # first and last 5 rows
+		df.head(n = 10)
+	- df.columns : list of col names
+		list(df.columns)
+		df.columns.difference([])
+	- df.dtypes
+		Series --> col names as loc and datatype
+		- df.get_dtype_counts()
+		- df._get_numeric_data()		
+- Structural Based Manipulations
+	- extracting columns
+		- .
+		- [[]]
+		- .loc[,] and .iloc[,]
+	- chaning datatypes
+		- df.col.astype(str) or ("object")
+		- df.col.astype(bool)
+		- pd.to_numeirc(df.col,errors="coerce")
+		- pd.to_datetime(,format = "")
+	- renaming
+		- df.rename(columns = {"existing":"new",...})
+	- adding
+		- df["NewCol"] = ...
+		- df = df.assign()
+	- deleting
+		- del df["ExistingCol"]
+		- df = df.drop(columns=[])
+	- re-arranging columns
+
+Dates
+	- We need to specify the date components to 
+	  convert a string to date
+	- Every component of a date haas a predefined symbol
+strptime : string parsing of time and dates
+day
+	day no(1-31)		%d	
+	week day abbr		%a
+	week day name		%A	"15-01-2019" --> "%d-%m-%Y"
+month					"15Jan19"  --? "%d%b%y"
+	month no		%m	"6/7/18"  --> "%m/%d/%y"
+	month abbr		%b
+	month name		%B	"Jul03, 19 14:41:33"
+year	century			%Y	"%b%d, %y %H:%M:%S"
+	w/o century		%y
+hours					"Jul03, 19 2:41:33 pm"
+	12			%I	"%b%d, %y %I:%M:%S %p"
+	am/pm			%p
+	24			%H
+mins				%M
+sec				%S
+--------------------------------------------------------------------
+- Content Based Manipulations
+	- flitering
+		- df.loc[<cond>,]
+	- sorting
+		- df.sort_values(by = [])
+	- merging
+		- pd.merge()
+			- left,right
+			- on or left_on & right_on
+			- how = "inner" : "outer","left","right"
+	- appending
+		- pd.concat()
+	- grouping/aggregations
+		- df.groupby(by=[])[[]].func()
+			- add_prefix() or add_suffix()	
+			- reset_index()
+				- use if required
+				- don't use drop=True		
+	- removing duplicates
+	- reshaping
+-------------------------------------------
+	- missing values
+	- outliers
+	- binning and encoding
+Merging : 
+	- pd.merge()
+	- left =  and right = 	
+	- Common columns : 
+		- with same names in both the tables
+			on = "CustID"
+		OR,
+		- with different names
+			left_on = "CustID"
+			right_on = "CID"
+	- How do we join?
+	  how = 
+		- "inner" (default)
+		- "outer"
+		- "left"
+		- "right"
+Appending/Concat:
+	- pd.concat()
+	- column bind
+		- axis = 1
+		- same no of rows
+		- all rows are sorted in same order
+	- row bind
+		- axis = 0
+		- same no of columns
+		- all columns should have same names
+		- and cols to be present in the same order
+			https://zoom.us/j/545123433
+-------------------------------------------
+	- missing values
+	- outliers
+	- binning and encoding
+- Descriptive Statistics/Exploratory Analysis
+	- on the complete data
+	- Data Mining
+	- Business Intelligence
+	- Aggregations or Some Calculations are done
+	- Visualizations
+
+- Inferential Statistics
+	- we work on samples
+	- either data is too large or we don't have complete data
+	- estimations
+- Type of Variables
+Continuous					Categorical
+
+- countable vars from			- denote some category or 
+   -Inf to Inf			   	  class
+- mostly int or float			- they can be str,int or float
+- any arithematic can			- we can only find frequency
+  be done on these vars			  proportion and mode
+  sum, mean, median, std,
+  var,MAD etc
+- Cont and Discrete Cont	        -
+
+Continuous		    		Categorical
+			   Nominal			Ordinal
+Income			   Color_Codes			Data_Comp
+Price			   Gender			Ticket_Prio
+Revenue			   Insurance Type		Ratings
+Population		   Zone				Designation
+Body measures		   Disease/No Disease		Sentiment
+Age			   Job Type			IncomeType
+Staff_Cnt/Cust_Cut	   Body Type			AgeGroup
+Production_Quant	   Status			Tax Slab
+TxnCount		   Department			CarType
+Insurance_Premium	   Asset Type
+AvgReturnsPerUser	   
+Weather related		   Transport Type
+
+
+- Binning and Encoding
+	- Binning
+		- Process of converting cont var to cat var
+		  Age ----> AgeGroup
+			if age < 18 : child
+			    18 - 35 : Youth
+			    35 - 60 : middle
+			      > 60  : senior
+	- Encoding
+		- Process of converting cat var to numeric data type
+		- Label/Level Encoding
+			- Priority       :    E>P1>P2>P3>P4>M
+			  Priority_num   :    1>2>3>4>5>6
+		- Onehot Encoding/Dummy Variables
+
+
+
+
+Univariate Analysis
+--------------------
+Continuous		    		Categorical
+-----------				-----------
+histogram				barchart (frequency bar)
+boxplot					pie chart
+scatterplot
+linechart
+------------------------------------------------------------------
+Bivariate Analysis
+--------------------
+Cont - Cont		  Cate - Cont			Cat - Cat
+-----------		---------------			---------
+correlation		 Aggregations			X tabs
+(-1 0 1)					      chi square val
+Vis : 			
+scatterplot		stacked bar chart		bar
+			dodged bar chart		pie
+			pie chart
+			area chart
+			line chart
+- Visualizations
+	- matplotlib package
+		- canvas to draw any graph from any pacakge
+		- gives a module named pyplots
+			- this contains the graphing functions
+				bar(),pie(),hist(),box()...
+			- also contains some control functions
+				legend, xaxis, yaxis, add labels
+				increase/decrease the size
+				export a graph as image etc
+
+	import matplotlib as mp
+	from matplotlib import pyplot as plt
+
+	- pandas plotting
+		- slight extention of plt
+		- df.plot(kind = "")
+		- helpful in getting quick graphs
+		- disadvantage : not so detailed
+	- seaborn
+		- non pyplot graphing package
+		- also has functions that can draw the graphs				- but uses the same canvas and some plt functions
+		  for it's generated objects (graphs)
+		- functions and their arguments are easy and 
+		  highly functional
+		- the outputs are elegant and easily controllable 
+	import seaborn as sns
+
+
+			https://zoom.us/j/104496928
+- Descriptive vs Inferential
+	- sample
+- Sampling : 
+	- SRS : Simple Random Sample
+		Popluation data of 100,000 cust who use handbag
+			90% of pop - F	10% of pop - M
+
+		Sample1 - 400 people
+			 60% F and 40% M
+
+		Sample2 - 400 people
+			87% F and 13% M		
+	- Stratified Samples
+		- SRS applied to groups/filtered by groups
+		- We shoud know the population info about the said
+			groups
+		- Groups are mutually exclusive
+
+	Oversampling and Undersampling
+
+		90% of pop - F	10% of pop - M
+
+		Sample1 - 400 people
+			 60% F and 40% M
+			 240	   160		
+			
+			 240       80 = 320
+			 75%	   25%    
+			
+
+			 240       20 = 260
+			 92.3	   7.6
+			
+			 240	   100 = 340
+			 70.5      29.5
+
+			 340       80 = 420
+			 80	   20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- What is the end goal of sample?
+	- Estimations
+		- Estimations come with a degree of error (lesser
+			the better)
+		- Two Types
+			- Point Estimator
+			- Interval Estimator
+
+1,2,3,4,5  
+BJP		250	XXX
+
+	     200 - 350
+
+		250		100				400
+	     100 - 400
+              0     100%
+
+	0	100	       270   300        400     543
+	|________|______|_______|____|____|______|_______|
+
+
+	      5  - 535  XXXX
+
+	Confidence Intervals - (alpha)
+		- 90%ile --> a bit higher chance of failure but a 
+				legitimate range
+		- 95%ile --> good range (default)
+		- 99%ile --> bad range/good interval for accuracy
+	
+		- alpha : 1 - CI
+			- 0.1   for CI 0.90
+			- 0.05  for CI 0.95
+			- 0.01  for CI 0.99
+	- Estimators need to be accurate
+	- Sample must always represent the population
+- Hypothesis Testing
+	- Normal Distributions
+	- Z Transform
+	- Z Test
+	- t test
+	- F Test
+	- Chi Square Test
+Normal Distributions : 
+	- Continuous distribution
+	- Symmetric
+		- mean == median == mode
+	- most of the data points are gathered around the 
+	  central tendency
+		mean +/- sd this range contains 68% of the data 
+		points	
+	- m +/- sd   : 68.4%
+	- m +/- 2*sd : 94.6%
+	- m +/- 3*sd : 99.7%
+	- Follows a typical bell curve
+- Bernouli - two events, same prob
+- Uniform -  > 2 events, same prob
+- Binomial - 2 events, eq/unequal prob on a discrete scale
+- Poission- 2 events, eq/unequal prob on a continuous scale
+- Normal Distribution
+	- continuous
+	- no of data points is atleast 30
+- Central Limit Theorm
+-------------------------
+Let's say there is a population that follows any of the given
+distributions and we take samples, then,
+	- All sample means follow a Normal Distribution
+	- The mean of the above sample means is equal to		
+		population mean
+	- The SD of the above curve is called Standard Error
+			      	     SD of pop
+		SD of samples = SE = ----------
+			              sqrt(N)
+
+	        mean of all sample means = mean population
+- sample mean == population mean ---> Z/t Test
+- One cat variable (>2 cat) is effecting/not effecting a cont variable
+	F Test or ANOVA
+- Tesing if one Cat variable influences another Cat var or not
+	Chi Square Test
+
+Hypothesis Testing 	
+	- it is a test for a hypothetical statement
+	- we define two hypothesis
+		NULL Hypothesis
+		ALT Hypothesis
+	- NULL Hypothesis, H0/Ho : checks for equality
+	- ALT Hypothesis, H1,Ha : checks for inequality or
+				  greater than or less then
+	- define your test statistic based on data
+		- Z test	- t test
+		- F Test	- chi square test
+	- calculate the test metric/test value/test statistics 
+		- Z Score	- t score
+		- F value	- chi square score
+	- OUTPUT from Python
+		- the test score
+		- p value
+	- Based on p value we reject or won't reject NULL Hypothesis
+		- if p is high, we fail to reject NULL
+		- if p is low, we reject NULL	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
